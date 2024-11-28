@@ -1,0 +1,30 @@
+package demo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class d {
+    public static void main(String arg[]) {
+        String jsonobj = "{#-data-#}";
+        List<String> techIds = new ArrayList<>();
+        techIds.add("Tech1");
+        techIds.add("Tech2");
+        techIds.add("Tech3");
+        
+        // StringBuilder for efficient concatenation
+        StringBuilder result = new StringBuilder();
+        
+        // Loop through the list and add quotes around each item
+        for (int i = 0; i < techIds.size(); i++) {
+            result.append("\"").append(techIds.get(i)).append("\"");
+            
+            // Add a comma after each element except the last one
+            if (i < techIds.size() - 1) {
+                result.append(",");
+            }
+        }
+        
+        // Output the final result
+        System.out.print(result.toString());
+    }
+}
